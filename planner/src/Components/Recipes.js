@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import Grocery from './Grocery'
 
 function Recipes() {
     const [showRecipe, setShowRecipe] = useState([])
+    // const[]
     // const [url, setUrl] = useState("")
     useEffect(() => {
         fetch("https://www.themealdb.com/api/json/v1/1/random.php")
             .then(resp => resp.json())
             .then(data => {
-                // console.log(data.meals.flat())
+                console.log(data.meals.flat())
                 setShowRecipe(data.meals.flat())
 
             })
@@ -17,7 +19,7 @@ function Recipes() {
     const cutFirst = url.flat().splice(0, 3)
     const joinUrl = cutFirst.join("/")
     const cutLast = url.flat().splice(3, 4).toString()
-    const cut = cutLast.slice(8, 19)
+    const cut = cutLast.slice(8, 20)
     const fullUrl = joinUrl + "/" + "embed" + "/" + cut
     // const newArr = cut.splice(8, 19)
     // console.log(newArr)
@@ -26,12 +28,14 @@ function Recipes() {
     // console.log(showRecipe.strYoutube)
     return (
         <div>
-            <h1>Random recipe</h1>
+
             {showRecipe.map((r) => {
                 return (
                     <div key={r.idMeal}>
-
+                        <h2 style={{ paddingLeft: "120px" }}>Random Recipe: {r.strMeal}, Category: {r.strCategory}</h2>
+                        <br></br>
                         <iframe
+                            style={{ paddingLeft: "120px" }}
                             width="800"
                             height="400"
                             src={fullUrl}
@@ -39,9 +43,15 @@ function Recipes() {
                             allowFullScreen
                             title="Random Recipe"
                         />
+                        <br></br>
+                        <p style={{ fontSize: "13px", paddingLeft: "120px", width: "800", height: "400", display: "flex", paddingRight: "200px" }}>Instructions: {r.strInstructions}</p>
+                        <img src={r.strMealThumb} style={{ paddingLeft: "120px", width: "400px", height: "200px" }}></img>
                     </div>
                 )
-            })}
+            })
+            }
+
+            <Grocery />
         </div>
     )
 }

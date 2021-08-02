@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid'
 import "./NewsCard.css"
 
 function NewsContainer({ news, setNews }) {
-    const [selectNewsCategory, setSelectNewsCategory] = useState("")
+    const [selectNewsCategory, setSelectNewsCategory] = useState("Tech Crunch")
 
     const displayNews = Object.values(news).filter(k => k === news.articles).flat()
         .map(n => {
@@ -18,29 +18,29 @@ function NewsContainer({ news, setNews }) {
     const techCrunch = `${baseUrl}top-headlines?sources=techcrunch&apiKey=${apiKey}`
     const wallStreetJournal = `${baseUrl}/everything?domains=wsj.com&apiKey=${apiKey}`
     // console.log(test)
-    // const newArr = [businessUrl, apple, techCrunch, wallStreetJournal]
-    // useEffect(() => {
-    //     if (selectNewsCategory === "Tech Crunch") {
-    //         fetch(techCrunch)
-    //             .then(resp => resp.json())
-    //             .then(data => setNews(data))
-    //     }
-    //     else if (selectNewsCategory === "Wall Street Journal") {
-    //         fetch(wallStreetJournal)
-    //             .then(resp => resp.json())
-    //             .then(data => setNews(data))
-    //     }
-    //     else if (selectNewsCategory === "Apple") {
-    //         fetch(apple)
-    //             .then(resp => resp.json())
-    //             .then(data => setNews(data))
-    //     }
-    //     else if (selectNewsCategory === "Business Headlines") {
-    //         fetch(businessUrl)
-    //             .then(resp => resp.json())
-    //             .then(data => setNews(data))
-    //     }
-    // })
+    const newArr = [businessUrl, apple, techCrunch, wallStreetJournal]
+
+    // if (selectNewsCategory === "Tech Crunch") {
+    //     fetch(techCrunch)
+    //         .then(resp => resp.json())
+    //         .then(data => setNews(data))
+    // }
+    // else if (selectNewsCategory === "Wall Street Journal") {
+    //     fetch(wallStreetJournal)
+    //         .then(resp => resp.json())
+    //         .then(data => setNews(data))
+    // }
+    // else if (selectNewsCategory === "Apple") {
+    //     fetch(apple)
+    //         .then(resp => resp.json())
+    //         .then(data => setNews(data))
+    // }
+    // else if (selectNewsCategory === "Business Headlines") {
+    //     fetch(businessUrl)
+    //         .then(resp => resp.json())
+    //         .then(data => setNews(data))
+    // }
+
 
     // console.log(news) 
     // console.log(displayNews)
@@ -59,7 +59,7 @@ function NewsContainer({ news, setNews }) {
                 </select>
 
             </div>
-            <p >Sorry, it's on repair! :(</p>
+            {/* <p >Sorry, it's on repair! :(</p> */}
             {displayNews}
         </div>
     )
