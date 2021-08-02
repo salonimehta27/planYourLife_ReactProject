@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SpaceCard from './SpaceCard'
+import "./Space.css"
 
 function Space() {
     const [spacePhoto, setSpacePhoto] = useState({})
@@ -18,7 +19,7 @@ function Space() {
     // console.log(spacePhoto)
 
     return (
-        <div>
+        <div className="center">
             {<SpaceCard key={spacePhoto.title}
                 date={spacePhoto.date}
                 image={spacePhoto.image}

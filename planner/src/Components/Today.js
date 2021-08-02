@@ -1,10 +1,11 @@
-
+import NewsContainer from "./NewsContainer"
+import { useState } from 'react'
 
 function Today() {
+    const [news, setNews] = useState({})
     return (
         <div>
-            <p>Display tasks here</p>
-            <p>Maybe have an shortcuts to grocery shopping here as well</p>
+            <NewsContainer news={news} setNews={setNews} />
         </div>
     )
 }
