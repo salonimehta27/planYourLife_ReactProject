@@ -5,11 +5,10 @@
       "item": ""
     }
   ],
-  "comments": [
+  "tasks": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "taskName": "some comment"
     }
   ],
   "profile": {
