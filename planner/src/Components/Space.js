@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SpaceCard from './SpaceCard'
-import "./Space.css"
+import "./CSS/Space.css"
 
 function Space() {
     const [spacePhoto, setSpacePhoto] = useState({})

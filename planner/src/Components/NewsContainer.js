@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import NewsCard from './NewsCard'
 import { nanoid } from 'nanoid'
-import "./NewsCard.css"
+import "./CSS/NewsCard.css"
 
 function NewsContainer({ news, setNews }) {
     const [selectNewsCategory, setSelectNewsCategory] = useState("Tech Crunch")

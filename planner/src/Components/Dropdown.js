@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { MenuItems } from "./MenuItems"
-import "./Dropdown.css"
+import "./CSS/Dropdown.css"
 
 function Dropdown() {
     const [click, setClick] = useState(false)

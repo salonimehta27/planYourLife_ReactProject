@@ -1,5 +1,6 @@
 import { useState } from "react"
-import "./Home.css"
+import "./CSS/Home.css"
+import Plan from "./Plan"
 function Home() {
     const [showMessage, setShowMessage] = useState(true)
 
@@ -21,6 +22,9 @@ function Home() {
                 <button className="center" onClick={handleClick}>Thank You! Take me to the website</button>
             </div>
 
+        </div>}
+        {!showMessage && <div>
+            <Plan />
         </div>}
     </>
     )
