@@ -37,7 +37,6 @@ function Grocery() {
 
         setGroceryInfo("")
     }
-    // const searches = grocery
 
     function handleSearchGrocery(e) {
         setSearchGrocery(e.target.value)

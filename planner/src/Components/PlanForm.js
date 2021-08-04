@@ -4,11 +4,6 @@ import "./CSS/PlanForm.css"
 
 function PlanForm({ onAdd }) {
 
-    // const [taskDate, setTaskDate] = useState("yyyy-mm-dd")
-    // const [task, setTask] = useState = ("")
-    // const [img, setImg] = useState("")
-    // const [notes, setNotes] = useState("")
-
     const [formData, setFormData] = useState({
         task: "",
         taskDate: "mm-dd-yyyy",

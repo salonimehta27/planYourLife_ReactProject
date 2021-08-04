@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import NewsCard from './NewsCard'
 import { nanoid } from 'nanoid'
 import "./CSS/NewsCard.css"
@@ -17,14 +17,7 @@ function NewsContainer({ news, setNews }) {
     const apple = `${baseUrl}everything?q=apple&from=2021-07-31&to=2021-07-31&sortBy=popularity&apiKey=${apiKey}`
     const techCrunch = `${baseUrl}top-headlines?sources=techcrunch&apiKey=${apiKey}`
     const wallStreetJournal = `${baseUrl}/everything?domains=wsj.com&apiKey=${apiKey}`
-    // console.log(test)
-    const newArr = [businessUrl, apple, techCrunch, wallStreetJournal]
 
-    // useEffect(() => {
-    //     fetch(apple)
-    //         .then(resp => resp.json())
-    //         .then(data => setNews(data))
-    // }, [])
     function handleChange(e) {
         setSelectNewsCategory(e.target.value)
         // console.log(e.target.value)
@@ -49,10 +42,6 @@ function NewsContainer({ news, setNews }) {
                 .then(data => setNews(data))
         }
     }
-
-
-    // console.log(news) 
-    // console.log(displayNews)
     return (
         <div className="center">
             <h1 >Top News Headlines</h1>
@@ -68,7 +57,6 @@ function NewsContainer({ news, setNews }) {
                 </select>
 
             </div>
-            {/* {selectNewsCategory === "Choose Category" ? <p >Please Pick a News Source </p> : null} */}
             {displayNews}
         </div>
     )

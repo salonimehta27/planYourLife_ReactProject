@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 
-function CalendarDisplay({ onPlanSubmit, eventValue, handleChange }) {
-    const [calendarMessage, setCalendarMessage] = useState(false)
+function CalendarDisplay() {
     const [googleCalendar, setGoogleCalendar] = useState("")
     const [displayCalendar, setDisplayCalendar] = useState([])
-    // const date = new Date().toLocaleDateString()
     // have to fix that the calendar updates without refreshing the page
     function handlepost(newCalendar) {
         setDisplayCalendar([...displayCalendar, newCalendar])
