@@ -23,24 +23,6 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "taskName": "some comment"
-    },
-    {
-      "task": "Cleaning",
-      "taskDate": "2021-08-04",
-      "img": "",
-      "notes": "Clean all the bathrooms and bedrooms",
-      "id": 2
-    },
-    {
-      "task": "Laundry",
-      "taskDate": "2021-08-12",
-      "img": "https://dbdzm869oupei.cloudfront.net/img/sticker/large/18593.jpg",
-      "notes": "do all the Laundry Today",
-      "id": 3
-    },
-    {
       "task": "Laundry",
       "taskDate": "2021-08-07",
       "img": "https://dbdzm869oupei.cloudfront.net/img/sticker/large/18593.jpg",
