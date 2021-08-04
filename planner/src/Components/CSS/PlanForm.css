@@ -71,3 +71,23 @@ input:-webkit-autofill:focus {
   webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset; */
    transition: background-color 5000s ease-in-out 0s;
 }
+
+/* a {
+  background-color:#ffa580;
+  box-shadow: 0 5px 0 darkred;
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  background-color: #ce0606;
+  cursor: pointer;
+}
+
+a:active {
+  box-shadow: none;
+  top: 5px;
+} */

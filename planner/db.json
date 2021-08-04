@@ -1,17 +1,68 @@
 {
   "grocery": [
     {
-      "id": 1,
-      "item": ""
+      "item": "Milk 2 gallons",
+      "id": 1
+    },
+    {
+      "item": "Chicken",
+      "id": 2
+    },
+    {
+      "item": "Basil",
+      "id": 3
+    },
+    {
+      "item": "Onion",
+      "id": 4
+    },
+    {
+      "item": "apple",
+      "id": 6
     }
   ],
   "tasks": [
     {
       "id": 1,
       "taskName": "some comment"
+    },
+    {
+      "task": "Cleaning",
+      "taskDate": "2021-08-04",
+      "img": "",
+      "notes": "Clean all the bathrooms and bedrooms",
+      "id": 2
+    },
+    {
+      "task": "Laundry",
+      "taskDate": "2021-08-12",
+      "img": "https://dbdzm869oupei.cloudfront.net/img/sticker/large/18593.jpg",
+      "notes": "do all the Laundry Today",
+      "id": 3
+    },
+    {
+      "task": "Laundry",
+      "taskDate": "2021-08-07",
+      "img": "https://dbdzm869oupei.cloudfront.net/img/sticker/large/18593.jpg",
+      "notes": "do Laundry",
+      "id": 4
+    },
+    {
+      "task": "Cooking",
+      "taskDate": "2021-08-06",
+      "img": "https://dbdzm869oupei.cloudfront.net/img/sticker/large/18593.jpg",
+      "notes": "Check grocery list to get stuff done",
+      "id": 5
+    },
+    {
+      "task": "Grocery",
+      "taskDate": "2021-08-09",
+      "img": "https://cdn2.vectorstock.com/i/1000x1000/95/21/food-grocery-stickers-vector-21859521.jpg",
+      "notes": "Check Grocery List",
+      "id": 6
     }
   ],
-  "profile": {
-    "name": "typicode"
+  "calendar": {
+    "url": "https://calendar.google.com/calendar/embed?src=flatironschool.com_n5h0flsd8f4ie573mfv6m85rn0%40group.calendar.google.com&ctz=America%2FNew_York"
   }
 }

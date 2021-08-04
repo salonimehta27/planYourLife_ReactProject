@@ -41,7 +41,6 @@ function Navbar() {
                 </li>
                 <li className='nav-item'><NavLink exact to="/recipes" className="nav-links" onClick={closeMobileMenu}>Hungry?</NavLink></li>
                 <li className='nav-item'><NavLink exact to="/space" className="nav-links" onClick={closeMobileMenu}>Space</NavLink></li>
-                <li className='nav-item'><NavLink exact to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>Sign up</NavLink></li>
                 <Button />
             </nav>
         </div>

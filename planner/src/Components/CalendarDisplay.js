@@ -1,13 +1,51 @@
-
+import { useState, useEffect } from 'react'
 
 function CalendarDisplay({ onPlanSubmit, eventValue, handleChange }) {
+    const [calendarMessage, setCalendarMessage] = useState(false)
+    const [googleCalendar, setGoogleCalendar] = useState("")
+    const [displayCalendar, setDisplayCalendar] = useState([])
     // const date = new Date().toLocaleDateString()
+    // have to fix that the calendar updates without refreshing the page
+    function handlepost(newCalendar) {
+        setDisplayCalendar([...displayCalendar, newCalendar])
+    }
+
+    useEffect(() => {
+        handleFetchCalendar()
+    }, [])
+
+    function handleFetchCalendar() {
+        fetch(`http://localhost:3000/calendar`)
+            .then(resp => resp.json())
+            .then(data => setDisplayCalendar([...displayCalendar, data]))
+    }
+
+    function handleAddCalendar(e) {
+        e.preventDefault()
+        fetch(`http://localhost:3000/calendar`, {
+            method: "post",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({
+                "url": googleCalendar
+            })
+        })
+            .then(res => res.json())
+            .then(data => handlepost(data))
+        handleFetchCalendar()
+        setGoogleCalendar("")
+    }
+    console.log(displayCalendar)
     return (
         <div>
-            <form onSubmit={onPlanSubmit}>
-                <input type="text" value={eventValue} onChange={(e) => handleChange(e.target.value)} placeholder="add your plans for today"></input>
-                <button>submit the plan</button>
+            <form onSubmit={handleAddCalendar}>
+                <input type="url" placeholder="Enter Url of your Google Calendar" value={googleCalendar} onChange={(e) => setGoogleCalendar(e.target.value)}></input>
+                <button>Add your Calendar</button>
             </form>
+            {displayCalendar.map(cal => <iframe key={cal.url} src={cal.url}
+                style={{ border: "0", width: "1000px", height: "500px", frameborder: "0", scrolling: "no" }}
+            ></iframe>)}
         </div>
     )
 }

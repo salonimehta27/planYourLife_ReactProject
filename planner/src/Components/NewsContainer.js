@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid'
 import "./CSS/NewsCard.css"
 
 function NewsContainer({ news, setNews }) {
-    const [selectNewsCategory, setSelectNewsCategory] = useState("Tech Crunch")
+    const [selectNewsCategory, setSelectNewsCategory] = useState("Choose Category")
 
     const displayNews = Object.values(news).filter(k => k === news.articles).flat()
         .map(n => {
@@ -20,26 +20,35 @@ function NewsContainer({ news, setNews }) {
     // console.log(test)
     const newArr = [businessUrl, apple, techCrunch, wallStreetJournal]
 
-    // if (selectNewsCategory === "Tech Crunch") {
-    //     fetch(techCrunch)
-    //         .then(resp => resp.json())
-    //         .then(data => setNews(data))
-    // }
-    // else if (selectNewsCategory === "Wall Street Journal") {
-    //     fetch(wallStreetJournal)
-    //         .then(resp => resp.json())
-    //         .then(data => setNews(data))
-    // }
-    // else if (selectNewsCategory === "Apple") {
+    // useEffect(() => {
     //     fetch(apple)
     //         .then(resp => resp.json())
     //         .then(data => setNews(data))
-    // }
-    // else if (selectNewsCategory === "Business Headlines") {
-    //     fetch(businessUrl)
-    //         .then(resp => resp.json())
-    //         .then(data => setNews(data))
-    // }
+    // }, [])
+    function handleChange(e) {
+        setSelectNewsCategory(e.target.value)
+        // console.log(e.target.value)
+        if (e.target.value === "Tech Crunch") {
+            fetch(techCrunch)
+                .then(resp => resp.json())
+                .then(data => setNews(data))
+        }
+        else if (e.target.value === "Wall Street Journal") {
+            fetch(wallStreetJournal)
+                .then(resp => resp.json())
+                .then(data => setNews(data))
+        }
+        else if (e.target.value === "Apple") {
+            fetch(apple)
+                .then(resp => resp.json())
+                .then(data => setNews(data))
+        }
+        else if (e.target.value === "Business Headlines") {
+            fetch(businessUrl)
+                .then(resp => resp.json())
+                .then(data => setNews(data))
+        }
+    }
 
 
     // console.log(news) 
@@ -50,16 +59,16 @@ function NewsContainer({ news, setNews }) {
             <br></br>
             <div>
                 <label htmlFor="newsSource">News Source : </label>
-                <select name="newsSource" value={selectNewsCategory} onChange={(e) => setSelectNewsCategory(e.target.value)}>
+                <select name="newsSource" value={selectNewsCategory} onChange={(e) => handleChange(e)}>
                     <option>Choose Category</option>
-                    <option>Apple</option>
                     <option>Tech Crunch</option>
                     <option>Wall Street Journal</option>
+                    <option>Apple</option>
                     <option>Business Headlines</option>
                 </select>
 
             </div>
-            {/* <p >Sorry, it's on repair! :(</p> */}
+            {/* {selectNewsCategory === "Choose Category" ? <p >Please Pick a News Source </p> : null} */}
             {displayNews}
         </div>
     )

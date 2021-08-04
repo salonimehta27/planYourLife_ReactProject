@@ -7,9 +7,9 @@ function NewsCard({ newsObj }) {
         <div>
 
             <br></br>
-            <p>Author:{newsObj.author}</p>
-            <p>Description:{newsObj.description}</p>
-            <p>Published at:{newsObj.publishedAt}</p>
+            <p>Author: {newsObj.author}</p>
+            <p>Description: {newsObj.description}</p>
+            <p>Published at: {newsObj.publishedAt}</p>
             <img src={newsObj.urlToImage} className="center" alt={newsObj.title} style={{ height: "500px", width: "500px" }}></img>
             <p >{likes} likes</p>
             <button onClick={() => setLikes(likes + 1)}>Like</button>

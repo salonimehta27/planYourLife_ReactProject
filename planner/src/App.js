@@ -46,13 +46,7 @@ function App() {
               eventValue={myEventsList.title}
               handleChange={handleChange}
             ></CalendarDisplay>
-            <Calendar
-              localizer={localizer}
-              events={myEventsList}
-              startAccessor="start"
-              endAccessor="end"
-              style={{ height: 500 }}
-            />
+
           </Route>
           <Route path="/today">
             <Today />
@@ -71,3 +65,10 @@ function App() {
 }
 
 export default App;
+{/* <Calendar
+              localizer={localizer}
+              events={myEventsList}
+              startAccessor="start"
+              endAccessor="end"
+              style={{ height: 500 }}
+            /> */}
