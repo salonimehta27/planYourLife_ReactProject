@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Grocery from './Grocery'
 import RecipeCard from './RecipeCard'
+import RefreshButton from './RefreshButton'
 
 function Recipes() {
     const [showRecipe, setShowRecipe] = useState([])
@@ -23,6 +24,7 @@ function Recipes() {
 
     return (
         <div>
+            <RefreshButton />
             {showRecipe.map((r) => <RecipeCard r={r} fullUrl={fullUrl} />)}
             <Grocery />
         </div>

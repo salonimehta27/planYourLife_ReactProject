@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import RefreshButton from './RefreshButton'
 
 function CalendarDisplay() {
     const [googleCalendar, setGoogleCalendar] = useState("")
@@ -41,6 +42,7 @@ function CalendarDisplay() {
                 <input type="url" placeholder="Enter Url of your Google Calendar" value={googleCalendar} onChange={(e) => setGoogleCalendar(e.target.value)}></input>
                 <button>Add your Calendar</button>
             </form>
+            <RefreshButton />
             {displayCalendar.map(cal => <iframe key={cal.url} src={cal.url}
                 style={{ border: "0", width: "1000px", height: "500px", frameborder: "0", scrolling: "no" }}
             ></iframe>)}

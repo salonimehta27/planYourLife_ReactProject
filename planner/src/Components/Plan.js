@@ -6,7 +6,7 @@ import Search from './Search'
 function Plan() {
     const [tasks, setTasks] = useState([])
     const [search, setSearch] = useState("")
-    const [showForm, setShowForm] = useState(true)
+    const [showForm, setShowForm] = useState(false)
 
 
     useEffect(() => {
@@ -32,7 +32,7 @@ function Plan() {
 
     return (
         <div>
-            <button onClick={() => setShowForm(!showForm)}>{showForm ? "Hide Form" : "Show Form"}</button>
+            <button onClick={() => setShowForm(!showForm)}>{showForm ? "Hide Form" : "Add New Task"}</button>
             {showForm && <PlanForm onAdd={handleAddTask} />}
             <Search search={search} onSearchChange={handleSearch} />
             {taskList}
