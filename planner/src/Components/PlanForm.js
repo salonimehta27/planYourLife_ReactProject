@@ -22,7 +22,7 @@ function PlanForm({ onAdd }) {
     }
     function formSubmit(e) {
         e.preventDefault();
-        fetch("http://localhost:3000/tasks", {
+        fetch("https://plan-your-magic.herokuapp.com/tasks", {
             method: "Post",
             headers: {
                 "content-type": "application/json"

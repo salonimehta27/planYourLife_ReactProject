@@ -8,7 +8,7 @@ function Grocery() {
     const [searchGrocery, setSearchGrocery] = useState("")
 
     function handleFetchGrocery() {
-        fetch(`http://localhost:3000/grocery`)
+        fetch(`https://plan-your-magic.herokuapp.com/grocery`)
             .then(res => res.json()).
             then(data => setGrocery(data))
     }
@@ -16,14 +16,14 @@ function Grocery() {
         handleFetchGrocery()
     }, [])
     function handleDelete(id) {
-        fetch(`http://localhost:3000/grocery/${id}`, {
+        fetch(`https://plan-your-magic.herokuapp.com/grocery${id}`, {
             method: "Delete"
         })
         setGrocery(() => grocery.filter(i => i.id !== id))
     }
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:3000/grocery', {
+        fetch('https://plan-your-magic.herokuapp.com/grocery', {
             method: "post",
             headers: {
                 "content-type": "application/json"

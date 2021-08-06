@@ -14,14 +14,14 @@ function CalendarDisplay() {
     }, [])
 
     function handleFetchCalendar() {
-        fetch(`http://localhost:3000/calendar`)
+        fetch(`https://plan-your-magic.herokuapp.com/calendar`)
             .then(resp => resp.json())
             .then(data => setDisplayCalendar([...displayCalendar, data]))
     }
 
     function handleAddCalendar(e) {
         e.preventDefault()
-        fetch(`http://localhost:3000/calendar`, {
+        fetch(`https://plan-your-magic.herokuapp.com/calendar`, {
             method: "post",
             headers: {
                 "content-type": "application/json"
