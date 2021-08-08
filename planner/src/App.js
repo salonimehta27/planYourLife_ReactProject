@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Navbar from './Components/Navbar';
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Home from './Components/Home';
@@ -9,7 +10,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 
 function App() {
-
+  const [displayCalendar, setDisplayCalendar] = useState([])
+  function handlepost(newCalendar) {
+    setDisplayCalendar([...displayCalendar, newCalendar])
+  }
   return (
     <div>
 
@@ -20,7 +24,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/calendar">
-            <CalendarDisplay />
+            <CalendarDisplay handlepost={handlepost} setDisplayCalendar={setDisplayCalendar} displayCalendar={displayCalendar} />
           </Route>
           <Route path="/today">
             <Today />

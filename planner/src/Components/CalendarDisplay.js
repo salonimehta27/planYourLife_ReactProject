@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
 import RefreshButton from './RefreshButton'
 
-function CalendarDisplay() {
+function CalendarDisplay({ handlepost, setDisplayCalendar, displayCalendar }) {
     const [googleCalendar, setGoogleCalendar] = useState("")
-    const [displayCalendar, setDisplayCalendar] = useState([])
+
     // have to fix that the calendar updates without refreshing the page
-    function handlepost(newCalendar) {
-        setDisplayCalendar([...displayCalendar, newCalendar])
-    }
+
 
     useEffect(() => {
         handleFetchCalendar()
@@ -21,7 +19,7 @@ function CalendarDisplay() {
 
     function handleAddCalendar(e) {
         e.preventDefault()
-        fetch(`https://plan-your-magic.herokuapp.com/calendar`, {
+        fetch(`https://plan-your-magic.herokuapp.com/calendar/`, {
             method: "post",
             headers: {
                 "content-type": "application/json"
@@ -35,7 +33,7 @@ function CalendarDisplay() {
         handleFetchCalendar()
         setGoogleCalendar("")
     }
-    console.log(displayCalendar)
+    // console.log(displayCalendar)
     return (
         <div>
             <form onSubmit={handleAddCalendar}>

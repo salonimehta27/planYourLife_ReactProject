@@ -11,7 +11,6 @@ function Navbar() {
                 </li>
                 <li className='nav-item'><NavLink exact to="/recipes" className="nav-links" >Hungry?</NavLink></li>
                 <li className='nav-item'><NavLink exact to="/space" className="nav-links" >Space</NavLink></li>
-                <Button />
             </nav>
         </div>
     )

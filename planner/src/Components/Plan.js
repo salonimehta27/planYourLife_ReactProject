@@ -10,13 +10,13 @@ function Plan() {
 
 
     useEffect(() => {
-        fetch("http://localhost:3000/tasks")
+        fetch("https://plan-your-magic.herokuapp.com/tasks")
             .then(res => res.json())
             .then(data => setTasks(data))
     }, [])
 
     function handleDeleteTask(id) {
-        fetch(`http://localhost:3000/tasks/${id}`, {
+        fetch(`https://plan-your-magic.herokuapp.com/tasks/${id}`, {
             method: "delete"
         })
         setTasks(() => tasks.filter(delTask => delTask.id !== id))
