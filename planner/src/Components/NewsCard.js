@@ -7,14 +7,13 @@ function NewsCard({ newsObj }) {
         <div>
 
             <br></br>
-            <p>Author: {newsObj.author}</p>
-            <p>Description: {newsObj.description}</p>
+
+            <p>Title: {newsObj.title}</p>
             <p>Published at: {newsObj.publishedAt}</p>
-            <img src={newsObj.urlToImage} className="center" alt={newsObj.title} style={{ height: "500px", width: "500px" }}></img>
-            <p >{likes} likes</p>
-            <button onClick={() => setLikes(likes + 1)}>Like</button>
+            <img src={newsObj.image} className="center" alt={newsObj.title} style={{ height: "500px", width: "500px" }}></img>
+            <h4 >{newsObj.description}</h4>
             <br></br>
-            <h4 >Content:{newsObj.content}</h4>
+            <p>{newsObj.content}</p>
             <a href={newsObj.url} className="center">Read More...</a>
             <br></br>
             <p >__________________________________________________________________</p>
@@ -27,3 +26,5 @@ function NewsCard({ newsObj }) {
 }
 
 export default NewsCard
+{/* <p >{likes} likes</p>
+            <button onClick={() => setLikes(likes + 1)}>Like</button> */}
