@@ -9,7 +9,7 @@ function RecipeCard({ r, fullUrl }) {
                 <p style={{ paddingLeft: "120px" }}>Cuisine: {r.strArea}</p>
                 <br></br>
                 <iframe
-                    style={{ paddingLeft: "120px" }}
+                    style={{ marginLeft: "10%" }}
                     width="800"
                     height="400"
                     src={fullUrl}
@@ -20,7 +20,7 @@ function RecipeCard({ r, fullUrl }) {
                 <br></br>
                 <p style={{ fontSize: "13px", paddingLeft: "120px", width: "800", height: "400", display: "flex", paddingRight: "200px" }}>Instructions: {r.strInstructions}</p>
                 <a href={r.strSource} >Click for full Recipe Ingredients</a>
-                <img src={r.strMealThumb} style={{ paddingLeft: "120px", width: "400px", height: "200px" }}></img>
+                <img src={r.strMealThumb} style={{ marginLeft: "10%", width: "300px", height: "200px" }}></img>
 
             </div>
         </div>

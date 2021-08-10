@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Confetti from "react-dom-confetti"
 import "./CSS/Home.css"
 import Plan from "./Plan"
 function Home() {
@@ -6,6 +7,21 @@ function Home() {
 
     function handleClick() {
         setShowMessage(!showMessage)
+        // const config = {
+        //     angle: "275",
+        //     spread: 360,
+        //     startVelocity: "35",
+        //     elementCount: "155",
+        //     dragFriction: "0.17",
+        //     duration: "3240",
+        //     stagger: "13",
+        //     width: "3px",
+        //     height: "25px",
+        //     perspective: "500px",
+        //     colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+        // };
+        // { showMessage === false && <Confetti config={config} /> }
+
     }
     return (<>
         {showMessage && <div>

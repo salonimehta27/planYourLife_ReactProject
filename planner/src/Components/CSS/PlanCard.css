@@ -1,48 +1,30 @@
 body {
-    background-color: #eee
+    background-color: #eee;
+    height:100%;
 }
 
 .main {
+    margin-top:0%;
     display: flex;
     justify-content: center;
-    height: 30vh;
+    height: 42vh;
     align-items: center;
-    background-color: #f6f6f6
+    background-color: #f6f6f6;
+    top:100%
 }
-
 .one {
+    margin-top: 5px;
     width: 270px;
     background-color: #000;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    top:100%;
 }
 
-.pic1 {
-    position: relative;
-    right: 22px;
-    top: 23px
-}
 
-.pic2 {
-    position: relative;
-    left: 25px;
-    top: 17px
-}
-
-.pic3 {
-    position: relative;
-    right: 13px;
-    bottom: 18px
-}
-
-.pic4 {
-    position: relative;
-    left: 14px;
-    bottom: 21px
-}
 
 .project {
     text-align: center;
@@ -59,15 +41,46 @@ body {
 }
 
 .two {
+   
     width: 270px;
+    /* margin-top:50px; */
     background-color: #fff;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    top:100%
 }
-
+.three{
+   
+    width: 270px;
+    /* margin-top: 50px; */
+    background-color:#fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: red;
+    box-shadow: 0 4px 8px 0 hsl(0, 92%, 48%), 0 6px 20px 0 rgba(219, 9, 9, 0.938);
+    top:100%
+}
+.four{
+   
+    width: 270px;
+    /* margin-top: 50px; */
+    background-color:#fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgb(32, 190, 32);
+    box-shadow: 0 4px 8px 0 hsl(135, 83%, 45%), 0 6px 20px 0 rgba(41, 170, 24, 0.938)
+}
 .star {
     font-size: 20px !important;
     color: #b1b4b7
@@ -142,4 +155,18 @@ body {
     text-align: center;
     position: relative;
     top: 2px
+}
+.scroll{
+    margin:0 auto;
+                padding:4px;
+                /* display:flex; */
+                justify-content: center;
+                background-color:palevioletred;
+                width: 50%;
+                margin-left: 25%;
+                height: 600px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+                background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
 }

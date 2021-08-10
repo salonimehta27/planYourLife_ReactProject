@@ -9,3 +9,4 @@ function Search({ search, onSearchChange }) {
 }
 
 export default Search
+// style={{ marginLeft: "25%", width: "500px" }}

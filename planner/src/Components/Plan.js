@@ -7,12 +7,16 @@ function Plan() {
     const [tasks, setTasks] = useState([])
     const [search, setSearch] = useState("")
     const [showForm, setShowForm] = useState(false)
+    const [sort, setSort] = useState(false)
 
 
     useEffect(() => {
         fetch("https://plan-your-magic.herokuapp.com/tasks")
             .then(res => res.json())
-            .then(data => setTasks(data))
+            .then(data => {
+                setTasks(data)
+                console.log(data)
+            })
     }, [])
 
     function handleDeleteTask(id) {
@@ -27,15 +31,33 @@ function Plan() {
     function handleSearch(e) {
         setSearch(e.target.value)
     }
-    const taskList = tasks.filter(s => s.task.toLowerCase().includes(search.toLowerCase()))
+    const sortByDate = [...tasks].sort((a, b) => {
+        a = a.taskDate.split("/").reverse().join("");
+        b = b.taskDate.split("/").reverse().join("");
+        return a > b ? 1 : a < b ? -1 : 0
+    })
+    console.log(sortByDate)
+    function handleSort() {
+        if (sort === true) {
+            return sortByDate.filter(s => s.task.toLowerCase().includes(search.toLowerCase()))
+        }
+        else {
+            return tasks.filter(s => s.task.toLowerCase().includes(search.toLowerCase()))
+        }
+    }
+    const taskList = handleSort()
         .map(t => <PlanCard key={t.id} id={t.id} task={t} onDelete={handleDeleteTask}></PlanCard>)
 
     return (
         <div>
-            <button onClick={() => setShowForm(!showForm)}>{showForm ? "Hide Form" : "Add New Task"}</button>
+            <button onClick={() => setShowForm(!showForm)}>{showForm ? "Hide Add Task" : "Add New Task"}</button>
             {showForm && <PlanForm onAdd={handleAddTask} />}
             <Search search={search} onSearchChange={handleSearch} />
-            {taskList}
+            <label htmlFor="" className="center">Sort By Date</label>
+            <input type="checkbox" name="sort" value="false" checked={sort} onChange={() => setSort(() => !sort)}></input>
+            <div className="scroll" style={{ position: "absolute" }}>
+                {taskList}
+            </div>
         </div>
     )
 }

@@ -24,7 +24,6 @@ function Recipes() {
 
     return (
         <div>
-            <RefreshButton />
             {showRecipe.map((r) => <RecipeCard key={r.id} r={r} fullUrl={fullUrl} />)}
             <Grocery />
         </div>
