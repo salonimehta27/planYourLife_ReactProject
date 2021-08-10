@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import "./CSS/App.css"
+
 function CalendarCard({ setDisplayCalendar, displayCalendar, url }) {
     const [googleCalendar, setGoogleCalendar] = useState("")
 
@@ -26,9 +28,11 @@ function CalendarCard({ setDisplayCalendar, displayCalendar, url }) {
                 <input type="url" placeholder="Enter Url of your Google Calendar" value={googleCalendar} onChange={(e) => setGoogleCalendar(e.target.value)}></input>
                 <button >Add your Calendar</button>
             </form>
-            <iframe src={url}
-                style={{ border: "0", width: "1000px", height: "500px", frameborder: "0", scrolling: "no" }}
-            ></iframe>
+            <div className="container">
+                <iframe src={url} className="responsive-iframe"
+                    style={{ scrolling: "no" }}
+                ></iframe>
+            </div>
         </div>
     )
 }

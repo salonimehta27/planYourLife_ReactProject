@@ -11,7 +11,7 @@ function PlanCard({ task, onDelete, id }) {
     // console.log(currentDate <= task.taskDate)
     // document.write(utc);
     function handleClass() {
-        if (yesterdayDate > task.taskDate) {
+        if (currentDate > task.taskDate) {
             return "three"
         }
         else {

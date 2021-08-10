@@ -1,12 +1,13 @@
 import React from 'react'
+import "./CSS/Space.css"
 
 function SpaceCard({ title, date, explanation, image }) {
     return (
-        <div>
+        <div className="shadow">
             <h1>NASA Astronomy picture of the Day</h1>
             <h4>{date}</h4>
             <h3>{title}</h3>
-            <img src={image} alt={title} style={{ height: "500px", width: "500px" }}></img>
+            <img src={image} alt={title} className="logo" style={{ height: "500px", width: "500px" }}></img>
             <p>{explanation}</p>
 
 

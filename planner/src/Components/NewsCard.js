@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./CSS/NewsCard.css"
 function NewsCard({ newsObj }) {
     // console.table(newsObj)
-    const [likes, setLikes] = useState(0);
     return (
-        <div>
+        <div className="shadow">
 
             <br></br>
-
-            <p>Title: {newsObj.title}</p>
-            <p>Published at: {newsObj.publishedAt}</p>
-            <img src={newsObj.image} className="center" alt={newsObj.title} style={{ height: "500px", width: "500px" }}></img>
+            <h3> {newsObj.title}</h3>
+            <h5>Published at: {newsObj.publishedAt}</h5>
+            <div className="shadow">
+                <img src={newsObj.image} className="logo" alt={newsObj.title} style={{ height: "500px", width: "500px" }}></img>
+            </div >
             <h4 >{newsObj.description}</h4>
             <br></br>
             <p>{newsObj.content}</p>

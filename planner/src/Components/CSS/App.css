@@ -11,3 +11,38 @@
 @media screen and (min-width: 1366px) {
     #image img {width:375px;}
 }
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  shadow {
+    position:absolute;
+    max-width:45%;
+    max-height:45%;
+    top:50%;
+    left:50%;
+    overflow:visible;
+}
+img.logo {
+  position:relative;
+  max-width:100%;
+  max-height:100%;
+  margin-top:0%;
+  margin-left:0%;
+}
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */
