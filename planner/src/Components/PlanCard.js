@@ -18,7 +18,7 @@ function PlanCard({ task, onDelete, id }) {
                 <p className="name">Task: {task.task}</p>
                 <p className="date">Due Date: {task.taskDate}</p>
                 <p className="quote2">Notes: {task.notes} </p>
-                <img src={task.img} style={{ height: "50px", width: "50px" }}></img>
+                <img src={task.img} alt="sticker" style={{ height: "50px", width: "50px" }}></img>
                 <button onClick={() => onDelete(id)}>Complete Task</button>
             </div>
         </div>

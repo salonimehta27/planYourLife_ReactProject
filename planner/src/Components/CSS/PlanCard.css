@@ -7,7 +7,8 @@ body {
     margin-top:0%;
     display: flex;
     justify-content: center;
-    height: 42vh;
+    /* height: 30vh; */
+    height: 27%;
     align-items: center;
     background-color: #f6f6f6;
     top:100%
@@ -50,7 +51,7 @@ body {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    top:100%
+    top:50%
 }
 .three{
    
@@ -65,7 +66,7 @@ body {
     border-width: 4px;
     border-color: red;
     box-shadow: 0 4px 8px 0 hsl(0, 92%, 48%), 0 6px 20px 0 rgba(219, 9, 9, 0.938);
-    top:100%
+    top:50%
 }
 .four{
    
@@ -165,7 +166,8 @@ body {
                 width: 75%;
                 position: sticky;
                 /* margin-left: 25%; */
-                height: 600px;
+                height: 800px;
+                /* height:50%; */
                 overflow-x: hidden;
                 overflow-y: auto;
                 text-align:justify;

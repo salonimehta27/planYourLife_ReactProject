@@ -19,7 +19,7 @@ function Space() {
     // console.log(spacePhoto)
 
     return (
-        <div className="center">
+        <div className="overlay">
             {<SpaceCard key={spacePhoto.title}
                 date={spacePhoto.date}
                 image={spacePhoto.image}

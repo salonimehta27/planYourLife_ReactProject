@@ -16,7 +16,7 @@ function Plan() {
             .then(res => res.json())
             .then(data => {
                 setTasks(data)
-                console.log(data)
+                // console.log(data)
             })
     }, [])
 
@@ -37,7 +37,7 @@ function Plan() {
         b = b.taskDate.split("/").reverse().join("");
         return a > b ? 1 : a < b ? -1 : 0
     })
-    console.log(sortByDate)
+    // console.log(sortByDate)
     function handleSort() {
         if (sort === true) {
             return sortByDate.filter(s => s.task.toLowerCase().includes(search.toLowerCase()))
@@ -59,7 +59,7 @@ function Plan() {
             <label htmlFor="" className="center">Sort By Date</label>
             <input type="checkbox" name="sort" value="false" checked={sort} onChange={() => setSort(() => !sort)}></input>
             <div className="scroll" >
-                <h5>To view more tasks please scroll through the tasks in this Task Box <CgScrollV /></h5>
+                <h5>Note: To view more tasks please scroll through the tasks in this Tasks Box. <CgScrollV />Todays task & overdue task  will be highlighted in red</h5>
                 {taskList}
             </div>
         </div>

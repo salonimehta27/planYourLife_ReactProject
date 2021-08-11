@@ -9,8 +9,8 @@ function Grocery() {
 
     function handleFetchGrocery() {
         fetch(`https://plan-your-magic.herokuapp.com/grocery`)
-            .then(res => res.json()).
-            then(data => setGrocery(data))
+            .then(res => res.json())
+            .then(data => setGrocery(data))
     }
     useEffect(() => {
         handleFetchGrocery()
