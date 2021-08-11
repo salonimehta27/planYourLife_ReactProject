@@ -51,7 +51,9 @@ function Plan() {
     return (
         <div>
             <button onClick={() => setShowForm(!showForm)}>{showForm ? "Hide Add Task" : "Add New Task"}</button>
+            <br></br>
             {showForm && <PlanForm onAdd={handleAddTask} />}
+            <br></br>
             <Search search={search} onSearchChange={handleSearch} />
             <label htmlFor="" className="center">Sort By Date</label>
             <input type="checkbox" name="sort" value="false" checked={sort} onChange={() => setSort(() => !sort)}></input>

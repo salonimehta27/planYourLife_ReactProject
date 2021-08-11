@@ -40,12 +40,11 @@ function PlanForm({ onAdd }) {
         <div>
             <form onSubmit={formSubmit}>
                 <label htmlFor="task">Task <FaTasks /> :</label>
-                <input type="text" name="task" placeholder='Enter your Task' onChange={handleOnChange}></input>
+                <input type="text" name="task" placeholder='Enter your Task' onChange={handleOnChange} required></input>
                 <label htmlFor="taskDate">Task date: </label>
 
-                <input type="date" id="taskDate" name="taskDate"
-                    value={formData.taskDate}
-                    min="2021-01-01" max="2021-12-31" onChange={handleOnChange}></input>
+                <input type="date" id="taskDate" name="taskDate" value={formData.taskDate}
+                    min="2021-01-01" max="2022-12-31" onChange={handleOnChange}></input>
                 <label htmlFor="img">Image: </label>
                 <input name="img" id="img" type="url" placeholder="Add an Image Url" onChange={handleOnChange}></input>
                 <label htmlFor="notes">Add Notes :</label>
