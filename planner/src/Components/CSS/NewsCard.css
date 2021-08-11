@@ -11,6 +11,7 @@
     top:50%;
     left:50%;
     overflow:visible;
+    text-align: center;
 }
 img.logo {
   position:relative;

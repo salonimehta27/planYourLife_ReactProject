@@ -37,7 +37,7 @@ function NewsContainer({ news, setNews }) {
 
 
     return (
-        <div className="center">
+        <div >
             <h1 >Top News Headlines</h1>
             <br></br>
             <div>
@@ -59,34 +59,3 @@ function NewsContainer({ news, setNews }) {
 }
 
 export default NewsContainer
-// const apiKey = "bdff385f2d4342ae913c30dcda75ccf4"
-//     const baseUrl = "https://newsapi.org/v2/"
-//     const businessUrl = `${baseUrl}top-headlines?country=us&category=business&apiKey=${apiKey}`
-//     const apple = `${baseUrl}everything?q=apple&from=2021-07-31&to=2021-07-31&sortBy=popularity&apiKey=${apiKey}`
-//     const techCrunch = `${baseUrl}top-headlines?sources=techcrunch&apiKey=${apiKey}`
-//     const wallStreetJournal = `${baseUrl}/everything?domains=wsj.com&apiKey=${apiKey}`
-
-//     function handleChange(e) {
-//         setSelectNewsCategory(e.target.value)
-//         // console.log(e.target.value)
-//         if (e.target.value === "Tech Crunch") {
-//             fetch(techCrunch)
-//                 .then(resp => resp.json())
-//                 .then(data => setNews(data))
-//         }
-//         else if (e.target.value === "Wall Street Journal") {
-//             fetch(wallStreetJournal)
-//                 .then(resp => resp.json())
-//                 .then(data => setNews(data))
-//         }
-//         else if (e.target.value === "Apple") {
-//             fetch(apple)
-//                 .then(resp => resp.json())
-//                 .then(data => setNews(data))
-//         }
-//         else if (e.target.value === "Business Headlines") {
-//             fetch(businessUrl)
-//                 .then(resp => resp.json())
-//                 .then(data => setNews(data))
-//         }
-//     }

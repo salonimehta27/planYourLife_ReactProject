@@ -16,7 +16,7 @@ function Grocery() {
         handleFetchGrocery()
     }, [])
     function handleDelete(id) {
-        fetch(`https://plan-your-magic.herokuapp.com/grocery${id}`, {
+        fetch(`https://plan-your-magic.herokuapp.com/grocery/${id}`, {
             method: "Delete"
         })
         setGrocery(() => grocery.filter(i => i.id !== id))

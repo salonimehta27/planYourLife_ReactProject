@@ -14,7 +14,6 @@ function RecipeCard({ r, fullUrl }) {
                     <iframe
                         className="responsive-iframe"
                         src={fullUrl}
-                        style={{ marginRight: "10 %" }}
                         frameBorder="0"
                         allowFullScreen
                         title="Random Recipe"
@@ -22,15 +21,14 @@ function RecipeCard({ r, fullUrl }) {
                 </div>
                 <br></br>
                 <p style={{ fontSize: "10px", display: "flex" }}> INSTRUCTIONS: {readMore ? r.strInstructions : `${r.strInstructions.substring(0, 300)}...`}
-                    <i onClick={() => setReadMore(!readMore)} style={{ color: "#000099" }} >
-                        {readMore ? 'Show less' : '  Read more'}
-                    </i>
+                    <span onClick={() => setReadMore(!readMore)} style={{ color: "#000099" }} >
+                        {readMore ? 'Show less' : 'Read more'}
+                    </span>
                 </p>
                 <a href={r.strSource} style={{ color: "purple", textDecoration: "none" }} >Click for full Recipe Ingredients</a>
                 <div className="shadow">
                     <img src={r.strMealThumb} className="logo" style={{ width: "400px", height: "300px" }} ></img>
                 </div>
-
             </div>
         </div>
     )

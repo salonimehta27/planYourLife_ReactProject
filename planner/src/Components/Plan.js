@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PlanCard from './PlanCard'
 import PlanForm from './PlanForm'
 import Search from './Search'
+import { CgScrollV } from "react-icons/cg"
 
 function Plan() {
     const [tasks, setTasks] = useState([])
@@ -50,14 +51,15 @@ function Plan() {
 
     return (
         <div>
-            <button onClick={() => setShowForm(!showForm)}>{showForm ? "Hide Add Task" : "Add New Task"}</button>
+            <button onClick={() => setShowForm(!showForm)}>{showForm ? "Done Adding Task" : "Add New Task"}</button>
             <br></br>
             {showForm && <PlanForm onAdd={handleAddTask} />}
             <br></br>
             <Search search={search} onSearchChange={handleSearch} />
             <label htmlFor="" className="center">Sort By Date</label>
             <input type="checkbox" name="sort" value="false" checked={sort} onChange={() => setSort(() => !sort)}></input>
-            <div className="scroll" style={{ position: "absolute" }}>
+            <div className="scroll" >
+                <h5>To view more tasks please scroll through the tasks in this Task Box <CgScrollV /></h5>
                 {taskList}
             </div>
         </div>

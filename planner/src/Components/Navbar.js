@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom"
 import { useState } from "react"
+import { GiMagickTrick } from 'react-icons/gi';
+
 import "./CSS/Navbar.css"
 function Navbar() {
 
@@ -14,7 +16,7 @@ function Navbar() {
     return (
         <div>
             <nav className='navbar'>
-                <NavLink exact to="/" className='navbar-logo' >PlanYourMagic<i className='fab fa-firstdraft' /></NavLink>
+                <NavLink exact to="/" className='navbar-logo' >PlanYourMagic<GiMagickTrick color="white" /></NavLink>
                 <div className="menu-icon" onClick={handleClick}><i className={click ? "fas fa-times" : "fas fa-bars"}></i></div>
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
                     <li className='nav-item'>
