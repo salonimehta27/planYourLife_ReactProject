@@ -3,12 +3,14 @@ import PlanCard from './PlanCard'
 import PlanForm from './PlanForm'
 import Search from './Search'
 import { CgScrollV } from "react-icons/cg"
+import { VscLoading } from "react-icons/vsc"
 
 function Plan() {
     const [tasks, setTasks] = useState([])
     const [search, setSearch] = useState("")
     const [showForm, setShowForm] = useState(false)
     const [sort, setSort] = useState(false)
+    const [note, setNote] = useState(false)
 
 
     useEffect(() => {
@@ -19,11 +21,14 @@ function Plan() {
                 // console.log(data)
             })
     }, [])
-
+    // console.log(!tasks)
+    if (tasks.length === 0) {
+        return <h1>Loading<VscLoading /></h1>
+    }
     function handleDeleteTask(id) {
-        fetch(`https://plan-your-magic.herokuapp.com/tasks/${id}`, {
-            method: "delete"
-        })
+        // fetch(`https://plan-your-magic.herokuapp.com/tasks/${id}`, {
+        //     method: "delete"
+        // })
         setTasks(() => tasks.filter(delTask => delTask.id !== id))
     }
     function handleAddTask(newTask) {
@@ -59,7 +64,7 @@ function Plan() {
             <label htmlFor="" className="center">Sort By Date</label>
             <input type="checkbox" name="sort" value="false" checked={sort} onChange={() => setSort(() => !sort)}></input>
             <div className="scroll" >
-                <h5>Note: To view more tasks please scroll through the tasks in this Tasks Box. <CgScrollV />Todays task & overdue task  will be highlighted in red</h5>
+                <h5 onClick={() => setNote(!note)}>{note ? "Note: To view more tasks please scroll through the tasks in this Tasks Box. Todays task & overdue task  will be highlighted in red and for demo tasks will not delete permanently" : "Click to see note"}</h5>
                 {taskList}
             </div>
         </div>

@@ -46,9 +46,9 @@ function Grocery() {
     return (
         <div>
             <div>
-                <form className="center" onSubmit={handleSubmit}>
+                <form className="centerText" onSubmit={handleSubmit}>
                     <input type="text" placeholder="Enter your grocery list" value={groceryInfo} onChange={(e) => setGroceryInfo(e.target.value)}></input>
-                    <button >Add</button>
+                    <button style={{ marginBottom: "8px" }}>Add</button>
                 </form>
                 <Search search={searchGrocery} onSearchChange={handleSearchGrocery} />
             </div>

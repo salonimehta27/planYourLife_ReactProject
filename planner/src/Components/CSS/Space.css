@@ -30,3 +30,11 @@ img.logo {
   z-index: 10;
   margin-bottom: 0%;
 }
+.centerText{
+  color:black;
+  position: relative;
+ left:0;
+  right:0;
+  margin:0px auto;
+  max-width: 600px;
+}

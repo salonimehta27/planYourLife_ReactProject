@@ -5,6 +5,7 @@ import CalendarDisplay from './Components/CalendarDisplay';
 import Today from './Components/Today';
 import Recipes from './Components/Recipes';
 import Space from './Components/Space';
+import Plan from './Components/Plan';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 
@@ -19,6 +20,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/tasks">
+            <Plan />
           </Route>
           <Route path="/calendar">
             <CalendarDisplay />

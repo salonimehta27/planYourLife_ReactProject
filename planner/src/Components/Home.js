@@ -1,13 +1,17 @@
 import { useState } from "react"
 import "./CSS/Home.css"
-import Plan from "./Plan"
+import { Redirect } from "react-router-dom";
 import { GiHalfHeart } from "react-icons/gi"
 
 function Home() {
     const [showMessage, setShowMessage] = useState(true)
-
+    // let history = useHistory();
     function handleClick() {
         setShowMessage(!showMessage)
+    }
+
+    if (!showMessage) {
+        return <Redirect to="/tasks" />
     }
     return (<>
         {showMessage && <div className="overlay">
@@ -22,13 +26,11 @@ function Home() {
                     different and fun things in this site, it's unlike any planner you probably
                     would come across.
                 </p>
-                <button className="center" onClick={handleClick}>Thank You! Take me to the planning <GiHalfHeart /></button>
+                <button className="center" onClick={() => handleClick()}>Thank You! Take me to the planning <GiHalfHeart /></button>
             </div>
 
         </div>}
-        {!showMessage && <div>
-            <Plan />
-        </div>}
+
     </>
     )
 }
