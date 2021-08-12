@@ -3,13 +3,6 @@ import "./CSS/PlanCard.css"
 
 function PlanCard({ task, onDelete, id }) {
     const currentDate = new Date().toJSON().slice(0, 10);
-    // const [dueTask, setDueTask] = useState(utc)
-    // const yesterdayDate = new Date(Date.now() - 864e5).toJSON().slice(0, 10)
-    // console.log(yesterdayDate)
-    // console.log(currentDate)
-    // console.log(task.taskDate)
-    // console.log(currentDate <= task.taskDate)
-    // document.write(utc);
 
     return (
 

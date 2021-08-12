@@ -6,10 +6,7 @@ function CalendarDisplay() {
     const [displayCalendar, setDisplayCalendar] = useState([])
     const [googleCalendar, setGoogleCalendar] = useState("")
     const [note, setNote] = useState(false)
-    // have to fix that the calendar updates without refreshing the page
-    // function handlepost(newCalendar) {
-    //     setDisplayCalendar([...displayCalendar, newCalendar])
-    // }
+
     const calendarDisplay = displayCalendar.map(d => <CalendarCard id={d.id} key={d.id} url={d.url}
         displayCalendar={displayCalendar}
         setDisplayCalendar={setDisplayCalendar}></CalendarCard>)
@@ -22,11 +19,6 @@ function CalendarDisplay() {
             .then(resp => resp.json())
             .then(data => setDisplayCalendar(data))
     }
-    // function addCalendarforDemo(e) {
-    //     e.preventDefault()
-    //     setDisplayCalendar([...displayCalendar, googleCalendar])
-    //     setGoogleCalendar("")
-    // }
     function handleAddCalendar(e) {
         e.preventDefault()
         fetch(`https://plan-your-magic.herokuapp.com/calendar`, {

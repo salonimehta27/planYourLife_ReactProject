@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./CSS/App.css"
 
 function CalendarCard({ setDisplayCalendar, displayCalendar, url, id }) {
@@ -6,9 +6,9 @@ function CalendarCard({ setDisplayCalendar, displayCalendar, url, id }) {
 
 
     function handleDeleteCalendar(id) {
-        // fetch(`https://plan-your-magic.herokuapp.com/calendar/${id}`, {
-        //     method: "delete"
-        // })
+        fetch(`https://plan-your-magic.herokuapp.com/calendar/${id}`, {
+            method: "delete"
+        })
         setDisplayCalendar(() => displayCalendar.filter(c => c.id !== id))
     }
     return (

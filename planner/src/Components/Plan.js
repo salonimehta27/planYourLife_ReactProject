@@ -26,9 +26,9 @@ function Plan() {
         return <h1>Loading<VscLoading /></h1>
     }
     function handleDeleteTask(id) {
-        // fetch(`https://plan-your-magic.herokuapp.com/tasks/${id}`, {
-        //     method: "delete"
-        // })
+        fetch(`https://plan-your-magic.herokuapp.com/tasks/${id}`, {
+            method: "delete"
+        })
         setTasks(() => tasks.filter(delTask => delTask.id !== id))
     }
     function handleAddTask(newTask) {
