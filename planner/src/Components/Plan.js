@@ -22,9 +22,7 @@ function Plan() {
             })
     }, [])
     // console.log(!tasks)
-    if (tasks.length === 0) {
-        return <h1>Loading<VscLoading /></h1>
-    }
+
     function handleDeleteTask(id) {
         fetch(`https://plan-your-magic.herokuapp.com/tasks/${id}`, {
             method: "delete"
@@ -65,6 +63,7 @@ function Plan() {
             <input type="checkbox" name="sort" value="false" checked={sort} onChange={() => setSort(() => !sort)}></input>
             <div className="scroll" >
                 <h5 onClick={() => setNote(!note)}>{note ? "Note: To view more tasks please scroll through the tasks in this Tasks Box. Todays task & overdue task  will be highlighted in red and for demo tasks will not delete permanently" : "Click to see note"}</h5>
+                {(tasks.length === 0) ? <h2>Add a Task<VscLoading /></h2> : null}
                 {taskList}
             </div>
         </div>
