@@ -14,7 +14,7 @@ function Recipes() {
             })
     }, [])
     const url = showRecipe.map(x => x.strYoutube.split("/"))
-    console.log(url)
+    //console.log(url)
     const cutFirst = url.flat().splice(0, 3)
     // console.log(cutFirst)
     const joinUrl = cutFirst.join("/")
