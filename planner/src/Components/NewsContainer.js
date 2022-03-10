@@ -15,9 +15,7 @@ function NewsContainer({ news, setNews }) {
 			.then((data) => setNews(data.articles))
 	}, [])
 	const baseUrl = "https://gnews.io/api/v4/"
-	const apiFilterKey =
-		"&token=d8008eba398b89556c24d4ca6f490369&lang=en&country=us"
-	// const newApiKey = "d8008eba398b89556c24d4ca6f490369"
+	const apiFilterKey = process.env.REACT_APP_NEWS_KEY
 	const technology = `${baseUrl}search?q=technology${apiFilterKey}`
 	const business = `${baseUrl}search?q=business${apiFilterKey}`
 	const topHeadlines = `${baseUrl}top-headlines?${apiFilterKey}`

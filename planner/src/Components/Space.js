@@ -4,11 +4,9 @@ import "./CSS/Space.css"
 
 function Space() {
 	const [spacePhoto, setSpacePhoto] = useState({})
-
+	const apiKey = process.env.REACT_APP_NASA_API_KEY
 	useEffect(() => {
-		fetch(
-			"https://api.nasa.gov/planetary/apod?api_key=x58xcKd0iMGjd2ikfftoROh3YNa5UEkJn2Vsa9hp"
-		)
+		fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
 			.then((resp) => resp.json())
 			.then((data) =>
 				setSpacePhoto({
@@ -20,7 +18,6 @@ function Space() {
 				})
 			)
 	}, [])
-	// console.log(spacePhoto)
 
 	return (
 		<div className="overlay">
